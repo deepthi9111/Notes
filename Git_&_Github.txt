@@ -1,0 +1,223 @@
+Git Commands
+------------
+>> Git simply save the changes and also give us the option to revert back the changes.This also allow us to know on which date and time the changes takes place and who did the changes.
+
+>> https://git-scm.com/download/win  - From this url we can download git software for windows and install it.
+
+>> Once installed Git on machine, it launch Gitbash. Moreover, Gitbash is a terminal which works just like unix.Gitbash is a command line interface where we can execute Git commands.
+
+>> When we use Git for first time then we have to tell Git what is our name and email.We do this because when any person looks upto Git then he/she can able to know who made the changes.
+git config --global user.name Ashish
+git config --global user.email dey444@gmail.com
+
+>> To check username and email set correctly - git config --global user.name --> Ashish and git config --global user.email --> dey444@gmail.com
+
+>> code . - Visual studio code IDE will open if VSC is installed on machine.
+
+>> git init - Initialized empty git repository.
+
+>> ls -lart - show all hidden folders.
+
+>> git status - show the current status.It just tells there are untrack files and we need to track those files and use those in git.
+
+>> Untracked - By the help of Git, we are not tracking those files. 
+
+>> Staging area - The files which are to be commit those files goes to staging area.First, stage the changes and then commit those changes.
+
+>> Unmodified - Those files once get commited comes to unmodified area.In this area, we can edit or remove those files.
+
+>> Modified - Those files which are edited then it goes to modified area from unmodified area.After that, again stage those files and commit. 
+
+>> git add index.html - It means we are telling git just get index.html file to staging area.
+
+>> git status - it will show changes to be committed(Goes to staging area and asking to commit)
+
+>> git commit - commit the files
+
+>> touch about.html - touch command is used to create blank files.
+
+>> if we do touch about.html, touch contact.html and touch monuments.html
+
+>> apply git status - It will show "nothing added to commit but untracked files present"
+
+>> git add -A - This command is used to add all files at one go to staging area. Generally this command is used when there are huge number of files.
+
+>> git status - It will tells all files are standing in staging area and ready for commit.Here, commit means snapshot of those files which are about to commit.
+
+>> If we modify few lines of code in contact.html then apply git status to show contact.html is modified. In this case, contact.html is in staging area and modified area.So, if we do git add contact.html then it will come to staging area again.However, we will do git add -A and git status to see all files i.e.about.html, contact.html and monuments.html are in staging area. That means we are ready to commit these files.
+
+>> git commit -m "Added more htmls" - It will commit all files with this message.
+
+>> git status - It will tell nothing to commit, working tree clean.
+
+>> clear - This command is used to clear the terminal.
+
+>> git checkout contact.html - It will match with the last commit of contact.html file.This command is used if any mismatch in the file happened and your code in the contact.html file ommited due to some reasons.
+
+>> git checkout -f - Use this command when there are whole bunch of files which needed to match the last commit.
+
+>> git log - This command will specify which files are commited and who did the commit.
+
+>> git log -p -1 -If there are more than 1000 commits and we need to see only five commits with all changes in specific file. Moreover, press "q" to exit.This is just tell which lines are added in which files.
+
+>> git diff - Working tree/branch will be compared to staging area. For example, if we modify text ashish in index.html then it will show the modified line that what we have ommitted and what we have added.
+
+>> git add -A - It won't show anything because it will compare working directory with staging area.If both are same then it won't show anything.
+
+>> git diff --staged - It will compare staging area to last commit.
+
+Note - diff will show the differences in the files.
+
+>> git commit -a -m^C - Here, after any command ^C will cancel the command to execute.
+
+Note - Staging area is important and best pratice because we can commit indivisual file
+
+>> git commit -a -m "skipped staging area and fixed" - This command is used when we want to skip staging area if the files are present in modified area.
+
+>> git log - It will show the recent commit message i.e.skipped staging area and fixed.
+
+Note - Gitbash can be used as terminal but as tool only.
+
+>> touch waste.html - create a blank html file.
+
+>> ls - show all files in specfic folder.
+
+>> git commit -a -m "Adding waste" - Nothing added to commit but untracked files present and it shows untracked file waste.html. In this case, we need to add, so apply command "git add -A" and then apply git commit -a -m "Adding waste".Now waste.html is committed successfully.
+
+>> git rm waste.html - Delete file and also delete file from staging area as well.
+
+>> git rm --cached waste.html - Only delete file from staging area. In this command,  once waste.html file deleted  and appear in untracked area when we set "git status" command.If suppose, any file is added i.e. moved to staging area and we want that particular file to put in  untracked zone then set "git rm --cached" command.
+
+>> git status - show waste.html file is deleted.
+
+>> git commit -a -m "Removing waste" - Just apply commit command.
+
+>> git status - Nothing to commit, working tree clean.
+
+>> git log -p -2 - It will show last two commits i.e.Removing waste and Adding waste.
+
+>> git log -p -1 - It will show only one commit i.e. Removing waste.
+
+>> git status -s - It will show summarized status.It will show a short status i.e. current summarized status.
+
+>> touch .gitignore - .gitignore file will be created in our workspace.
+
+>> touch mylogs.log - mylogs.log file will be created in our workspace.
+
+>> In .gitignore file specify mylogs.log, *.log, *.cpp and apply command "git add -A" then it will ignore all the files which have mylog.log, .log and .cpp files i.e. it will not add these files in staging area.
+
+>> If we specify /mylog.log and apply command "git add -A" then it will ignore mylog.log entry in .gitignore file only not else where.
+
+>> If we want to commit untracked files mylog.log in log folder then apply command "git add -A" and that file will added to staging area and ready to get commit.
+
+>> If there is a ignore folder and inside it there is a file named test.html and specify the ignore folder in .gitignore  file as ignore/. After that apply command "git add -A"  then it will ignore that specific folder ignore as specified in .gitignore file.
+
+>> Master branch - By default, it is the main branch.
+
+>> git branch feature1 - It will create a branch feature1.
+
+>> git branch - It will show two branches i.e.feature1 and master.
+
+>> git checkout feature1 - switch to feature1 branch.
+
+>> git status - On branch feature1 and nothing to commit.
+
+>> git checkout master - switch to master branch.
+
+>> If we are in master branch and apply command "git merge feature1".In this case, feature1 branch is merged with master branch.
+
+>> git checkout -b flaskIntegration - It will create a new branch named flaskIntegration and also will switched to this newly created branch.
+
+>> Github :- It is hoasting service for git repositories.Create a Github account and visit site https://github.com
+.In Github there are two services i.e. unlimited public repositories and unlimited private repositories.However, public repositories are visible to all where as private repositories are limited to specific user/owner.Github is a product of microsoft.
+
+>> Create new repository in Github - Click on + and New repository in the right side corner of the page in Github.Give repository name as Git-In-One-Video, give description as This is my first repo, click private and click creating repository.
+
+>> remote - Type of URL where we will host our repository.
+
+>> Pushing local repository to remote repository - 
+
+>> In Git terminal, apply command "git remote add origin https://github.com/-----/Git-In-One-Video". This means this url shortname can be called as origin. By doing this, remote repository is added in master branch as we did this in master branch.
+
+>> git remote - It will show origin as one remote repository.
+
+>> git remote -v - It will specify fetch and push URLs.
+
+>> git push origin master - This command will push master branch to remote origin repository.
+
+>> In Github, Go to Settings(top right corner) --> SSH and GPG keys.
+
+>> In Gitbash terminal, aaply command "ssh-keygen -t rsa -b 4096 -C "dey444@gmail.com"" and then enter which will generate private and public keys.Ask y/n :- y enter, enter, enter. Here, key is generated.
+
+>> In Gitbash terminal, run eval $(ssh-agent -s) - Agent process id 
+
+>> In Gitbash terminal, execute "ssh-add ~/.ssh/id_rsa" - ssh private key is added to ssh agent.
+
+>> cat ~/. ssh/id_rsa.pub - cat simply show the content and we need to copy that content and go to SSH and GPG keys link and click New SSH key and paste the content and specify title.After that, click add ssh key and then it will show we have read/write access.
+
+>> git push -u origin master - It will show repository not found.
+
+>> git remote set-url origin git@github.com:----/Git-In-One-Video
+set-url :- Change url.  
+
+>> git remote - show origin
+
+>> git remote -v - fetch and push URLs has changed.
+
+>> git push -u origin master - It will ask continue connecting Y. Then, it got pushed. Here one branch i.e.master branch is pushed.
+
+>> git checkout flaskIntegration - switch to flaskIntegration branch from master branch.
+
+>> git push -u origin flaskIntegration - It will push flaskIntegration branch to origin branch.
+
+We will reload the Github page to see two branches has been pushed successfully.
+
+>> git clone - Create a new folder in desktop and open gitbash inside that folder.Than go to Github and copy the url from Cone and download section and apply command "git clone url Ashish(folder_name)". After that, it will clone in Ashish folder. 
+
+>> git branch -d <branch_name> - delete this specific branch.
+
+>> git push origin -delete <branch_name> - delete remote branch.
+
+>> git branch -m <old_branch_name> <new_branch_name> - rename branch.
+
+>> git merge <branch_name> - merge two branches i.e. merge <branch_name> with currently active branch.Suppose, we are in master branch then the master branch is merged with <branch_name>
+
+>> Git Merge Confit - When two branches are trying to merge, and both are edited at the same time and in the same file, Git won't be able to identify which version is to take for changes. Such a situation is called merge conflict. If such a situation occurs, it stops just before the merge commit so that you can resolve the conflicts manually.
+
+>> git pull --rebase origin master - Suppose, user1 and user2 tried to commit the same file in remote repository then  user2 encountered error.In that case, it is suggested that to pull the repository before the push.
+
+>> git mergetool - This command is used to resolve the conflict.
+
+>> git rebase --continue - Once the conflict in the file get resolved, again apply rebase command to accept the changes.
+
+Note - It is always good practise to rebase your branch before merging it. Rebasing is a process to reapply commits. 
+In Git, there are two ways to integrate changes from one branch to another.
+Git Merge, Git Rebase.
+
+>> Git squash - This command merge the two or more commits together into a single commit. In order to do this we required git rebase command. Git rebase command is used to rewrite the history of the commits.
+git rebase -i HEAD-3 (3 - rebase top to bottom commits) 
+After that, hit enter 
+We will see only 3 commits will be available because we mentioned 3 in the command.
+Again, hit enter which will make it available in edit mode and mention s i.e. squash in 2 commits from bottom. 
+After that, simply hit Esc :wq hit enter (wq - write and quit)
+Again, hit enter and keep the commit message. Then, hit Esc :wq hit enter.
+It shows successfully rebased and updated.
+
+>> git fetch - sync up your remote and local repository without showing any changes on the working copy.
+Suppose, we do some changes in the readme.txt file in remote repository and commit the changes.
+After that, apply command git fetch and we will see no changes reflected in the readme.txt file locally. There after, do git merge and it will help us to merge the changes successfully.
+To see the changes apply command git diff master origin/master (origin/master - local repository)
+
+>> git pull - Ideally, git fetch + git merge = git pull -  It make the changes in the local repository as well as it makes the changes in the working directory(i.e. local directory)
+
+>> git push - If we want to make local repository sync with remote repository and we want to push our changes that we have done in local repository which is available to all user by pushing it on remote repository, then we need to use git push.
+
+For ex, file1 and file2 were commited on our local but these files are not present on the remote repository.
+
+If we apply git push then all the changes would be pushed on remote repository. Again do some changes in file1 and add the changes to staging area by git add file1. After that, commit the file by git commit -m "file1 added". Finally, push the file1 by git push command which will take the file1 pushed from local repository to remote repository.
+
+Note - While you push the code from local to remote repository and there is a conflict then solve the conflict manually then you need to add and commit the same file.After that, apply git pull which will say "Already up to date". Finally, push the file to remote repository.
+
+
+
+
